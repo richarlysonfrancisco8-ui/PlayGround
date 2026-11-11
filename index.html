@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fff6f1" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ctext y='32' font-size='32'%3E%E2%9C%BF%3C/text%3E%3C/svg%3E" />
+  <title>Little Wonder — a cozy unboxing game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Little Wonder home"><span class="brand-mark">✿</span><span>little<span class="brand-soft">wonder</span></span></a>
+      <div class="top-note"><span class="sparkle">✦</span> a tiny moment of calm <span class="sparkle">✦</span></div>
+      <button class="sound-toggle" id="soundToggle" aria-label="Turn sound off" title="Sound on"><span class="sound-icon">♫</span><span class="sound-label">Sound on</span><span class="sound-switch"><i></i></span></button>
+    </header>
+
+    <section class="game-layout" aria-label="Kawaii toy unboxing game">
+      <aside class="intro-panel">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR COZY CORNER</p>
+        <h1>A little box <br>of <em>wonder.</em></h1>
+        <p class="intro-copy">Take a breath, unwrap something sweet, and meet a new little friend.</p>
+        <div class="collection-card">
+          <div class="collection-heading"><div><span class="mini-label">TODAY'S COLLECTION</span><h2>Dreamy pals</h2></div><span class="collection-icon">☁</span></div>
+          <div class="progress-row"><div class="progress-track"><span id="progressFill"></span></div><span id="collectionCount">0 / 6</span></div>
+          <div class="mini-collection" id="miniCollection" aria-label="Collected toys"></div>
+          <p class="collection-hint" id="collectionHint">Your first little friend is waiting ✨</p>
+        </div>
+        <div class="calm-tip"><span class="tip-icon">☾</span><p><strong>A soft reminder</strong><br>There’s no rush. Enjoy the little things.</p></div>
+      </aside>
+
+      <section class="play-panel">
+        <div class="scene-topline"><div class="scene-pill"><span class="live-dot"></span> UNWRAP AT YOUR OWN PACE</div><button id="resetButton" class="reset-button" title="Start a fresh collection"><span>↻</span> Start over</button></div>
+        <div class="scene" id="scene">
+          <div class="window-glow"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+          <div class="wall-star star-one">✦</div><div class="wall-star star-two">✧</div><div class="wall-star star-three">✦</div>
+          <div class="scene-caption"><span id="sceneMessage">A surprise is tucked inside...</span><span class="caption-heart">♡</span></div>
+          <div class="plinth-shadow"></div>
+          <div class="toy-reveal" id="toyReveal" aria-live="polite"></div>
+          <div class="box-stage" id="boxStage" role="button" tabindex="0" aria-label="Tap to open the mystery box">
+            <div class="box-back"></div>
+            <div class="box-inside"></div>
+            <div class="box-side"></div>
+            <div class="box-front"><div class="front-ribbon"></div><div class="box-sticker"><span>✦</span><b>for you</b><span>✦</span></div><div class="front-bow"><i></i><i></i><b></b></div></div>
+            <div class="box-lid"><div class="lid-top"></div><div class="lid-front"></div><div class="lid-side"></div><div class="lid-ribbon"></div><div class="lid-bow"><i></i><i></i><b></b></div></div>
+            <div class="box-glimmer glimmer-one">✧</div><div class="box-glimmer glimmer-two">✦</div>
+          </div>
+          <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+          <div class="soft-ground"></div>
+          <div class="scene-plants plant-left"><i></i><b></b><span></span></div><div class="scene-plants plant-right"><i></i><b></b><span></span></div>
+        </div>
+        <div class="action-area">
+          <div class="action-copy"><span class="action-kicker" id="actionKicker">A LITTLE SURPRISE</span><h2 id="actionTitle">Ready when you are</h2><p id="actionDescription">Tap the box, or use the button below.</p></div>
+          <button class="open-button" id="openButton"><span class="button-sparkle">✧</span><span id="buttonText">Open my box</span><span class="button-arrow">→</span></button>
+        </div>
+        <div class="box-picker-wrap"><div class="picker-label"><span>CHOOSE YOUR WRAP</span><span class="picker-rule"></span><span class="picker-sub">every box holds a friend</span></div><div class="box-picker" id="boxPicker"></div></div>
+      </section>
+
+      <aside class="right-panel">
+        <div class="how-card"><div class="how-icon">🫧</div><span class="mini-label">A GENTLE LITTLE GAME</span><h3>One box.<br>One new pal.</h3><div class="how-step"><span>01</span><p>Pick a pretty box<br><b>that feels like you.</b></p></div><div class="step-line"></div><div class="how-step"><span>02</span><p>Take a breath<br><b>and open it slowly.</b></p></div><div class="step-line"></div><div class="how-step"><span>03</span><p>Meet your new friend<br><b>and add it to your shelf.</b></p></div></div>
+        <div class="sound-card"><div class="sound-card-icon">〰</div><div><b>Little sounds</b><p>Soft paper & tiny chimes</p></div><span class="sound-check">♪</span></div>
+        <div class="made-with">made with a little <span>♥</span> for you</div>
+      </aside>
+    </section>
+    <footer class="footer"><span>PAUSE • BREATHE • PLAY</span><span>✿</span><span>A LITTLE WONDER, JUST FOR YOU</span></footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="resetModal" aria-hidden="true"><div class="modal-card"><span class="modal-flower">✿</span><h2>A fresh little start?</h2><p>Your found friends will go back to their dreamy home. Are you sure?</p><div class="modal-actions"><button id="keepButton" class="quiet-button">Keep my pals</button><button id="confirmReset" class="confirm-button">Start fresh</button></div></div></div>
+  <script src="game.js"></script>
+</body>
+</html>
